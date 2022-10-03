@@ -1,5 +1,5 @@
 %************************************************************************
-% MOD-LEACH Routing Protocol BY 18CS30
+% MOD-LEACH
 %************************************************************************
 
 clear;
@@ -255,31 +255,5 @@ STATISTICS.PACKETS_TO_BS(r+1)
 STATISTICS.COUNTCHS(r+1)
 
 r=0:rmax;
-figure (1);
-plot(r,STATISTICS.DEAD);
-xlabel('Rounds');
-ylabel('Dead Nodes');
-title('MODLEACH');
-figure (2);
-plot(r,STATISTICS.PACKETS_TO_BS);
-xlabel('Rounds');
-ylabel('Packets to BS');
-title('MODLEACH');
-figure (3);
-plot(r,STATISTICS.COUNTCHS);
-xlabel('Rounds');
-ylabel('Number of Cluster Heads');
-title('MODLEACH');
-figure (4);
-plot(r,STATISTICS.PACKETS_TO_CH);
-xlabel('Rounds');
-ylabel('Packets to CH')
-title('MODLEACH');
-figure (5);
-plot(r,STATISTICS.ALLIVE);
-xlabel('Rounds');
-ylabel('Allive nodes')
-title('MODLEACH');
-
 
 
