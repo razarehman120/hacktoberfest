@@ -16,7 +16,7 @@ sink.y = ym + 50;
 %sink.y=0.5*ym;
 
 %Number of Nodes in the field
-n = 200;
+n = 100;
 %Optimal Election Probability of a node to become cluster head
 p=0.05;
 packetLength =6400;
@@ -33,9 +33,9 @@ Emp=0.0013*0.000000000001;
 %Data Aggregation Energy
 EDA=5*0.000000001;
 
-INFINITY = 999999999999999;
+INFINITY = 9898989898989898;
 %maximum number of rounds
-rmax=1000;
+rmax=100;
 %%%%%%%%%%%%%%%%%%%%%%%%% END OF PARAMETERS %%%%%%%%%%%%%%%%%%%%%%%%
 %Computation of do
 
@@ -244,14 +244,14 @@ end
 plot(x,y,'--');
 hold on;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   STATISTICS GRAPH PLOT SIR   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                                                                                     %
-%  DEAD  : a rmax x 1 array of number of dead nodes/round 
-%  DEAD_A : a rmax x 1 array of number of dead Advanced nodes/round
-%  DEAD_N : a rmax x 1 array of number of dead Normal nodes/round
-%  CLUSTERHS : a rmax x 1 array of number of Cluster Heads/round
-%  PACKETS_TO_BS : a rmax x 1 array of number packets send to Base Station/round
-%  PACKETS_TO_CH : a rmax x 1 array of number of packets send to ClusterHeads/round
-%  first_dead: the round where the first node died                   
+                                                                                  %
+ DEAD  : a rmax x 1 array of number of dead nodes/round 
+DEAD_A : a rmax x 1 array of number of dead Advanced nodes/round
+DEAD_N : a rmax x 1 array of number of dead Normal nodes/round
+CLUSTERHS : a rmax x 1 array of number of Cluster Heads/round
+PACKETS_TO_BS : a rmax x 1 array of number packets send to Base Station/round
+ PACKETS_TO_CH : a rmax x 1 array of number of packets send to ClusterHeads/round
+first_dead: the round where the first node died                   
 %                                                                                     %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%sink(50,175) ,ctrPacketLength=200,packetLength=4000,Eo=2J.
+sink(50,175) ,ctrPacketLength=200,packetLength=4000,Eo=2J.
