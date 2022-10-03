@@ -1,7 +1,5 @@
 %  ACTUAL LEACH IMPLEMENTATION %
-clc
-clear all;
-close all;
+
 xm=300;
 ym=300;
 sink.x=0.5*xm;
@@ -48,21 +46,7 @@ end
 plot(S(n+1).xd,S(n+1).yd,'o', 'MarkerSize', 12, 'MarkerFaceColor', 'r');
 text(S(n+1).xd+1,S(n+1).yd-0.5,num2str(n+1));
 hold off ;
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-countCHs=0;  %variable, counts the cluster head
-cluster=1;  %cluster is initialized as 1
-flag_first_dead=0; %flag tells the first node dead
-flag_half_dead=0;  %flag tells the 10th node dead
-flag_all_dead=0;  %flag tells all nodes dead
-first_dead=0;
-half_dead=0;
-all_dead=0;
-allive=n;
-%counter for bit transmitted to Bases Station and to Cluster Heads
-packets_TO_BS=0;
-packets_TO_CH=0;
-packets_TO_BS_per_round=0;
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 for r=0:1:rmax
     r 
     packets_TO_BS_per_round=0;
@@ -76,7 +60,9 @@ for r=0:1:rmax
     
     %hold off;
     
-    %Number of dead nodes
+   
+   
+   %Number of dead nodes
     dead=0;
     
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -286,4 +272,19 @@ title('COUNTCHS')
 figure(8)
 plot(r,STATISTICS.ENERGY(h+1,r+1));
 title('Average Residual Energy') 
+
+
+
+figure(8)
+plot(r,STATISTICS.THROUGHPUT(1,r+1));
+title('THROUGHPUT')
+figure(10)
+plot(r,STATISTICS.COUNTCHS(h-1,r-1));
+title('COUNTCHS')
+figure(9)
+plot(r,STATISTICS.ENERGY(h,r));
+title(' Energy') 
+
+
+
     
