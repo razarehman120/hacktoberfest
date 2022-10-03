@@ -9,7 +9,7 @@ sink.y=0.5*ym;
 sink.x=100;
 sink.y=75;
 
-n=200;
+n=100;
 p=0.1;
 Eo=0.5;
 ETX=50*0.000000001;
@@ -26,6 +26,14 @@ for h=1:1
     S(n+1).xd=sink.x;
     S(n+1).yd=sink.y;
     Et=0;
+
+for i=1:1
+    S(n+1).xd=sink.x;
+    S(n+1).yd=sink.y;
+    Et=0;
+    
+    
+    
 for i=1:1:n
     S(i).xd=rand(1,1)*xm;
     XR(i)=S(i).xd;
@@ -36,7 +44,9 @@ for i=1:1:n
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     S(i).G=0;
     %initially there are no cluster heads only nodes
-    S(i).type='N';
+   
+   
+   S(i).type='N';
     S(i).E=Eo;
     Et=Et+S(i).E;
     figure(h*10)
@@ -44,6 +54,8 @@ for i=1:1:n
       text(S(i).xd+1,S(i).yd-0.5,num2str(i));
       hold on;
 end
+
+%%%%%% plot %%%%%%
 
 plot(S(n+1).xd,S(n+1).yd,'o', 'MarkerSize', 12, 'MarkerFaceColor', 'r');
 text(S(n+1).xd+1,S(n+1).yd-0.5,num2str(n+1));
@@ -260,7 +272,7 @@ first_dead=sum(first_dead_LEACH)/h;
 half_dead=sum(half_dead_LEACH)/h;
 all_dead=sum(all_dead_LEACH)/h;
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% result %%%%%%%%
 r=0:rmax;
 figure(1)
 plot(r,STATISTICS.DEAD(h+1,r+1));
