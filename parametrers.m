@@ -1,7 +1,3 @@
-
-
-clear;
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PARAMETERS %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %Field Dimensions - x and y maximum (in meters)
@@ -187,17 +183,7 @@ for i=1:1:n
             S(i).E = S(i).E - ETX * ctrPacketLength;
          end
        
-         %Energy dissipated by associated Cluster Head
-         min_dis;
-         if (min_dis > do)
-             S(i).E = S(i).E - (ETX*(ctrPacketLength) + Emp * ctrPacketLength*( min_dis * min_dis * min_dis * min_dis)); %
-             S(i).E = S(i).E - (ETX*(packetLength) + Emp*packetLength*( min_dis * min_dis * min_dis * min_dis)); %
-         else
-            S(i).E = S(i).E -(ETX*(ctrPacketLength) + Efs*ctrPacketLength*( min_dis * min_dis)); %
-            S(i).E = S(i).E -(ETX*(packetLength) + Efs*packetLength*( min_dis * min_dis)); %
-         end
-         S(i).E = S(i).E - ETX*(ctrPacketLength);  %
-             
+               
          %Energy dissipated 
          if(min_dis > 0)
             S(C(min_dis_cluster).id).E = S(C(min_dis_cluster).id).E - ((ERX + EDA)*packetLength ); %
