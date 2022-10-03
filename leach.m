@@ -275,7 +275,7 @@ title('Average Residual Energy')
 
 
 
-figure(8)
+figure(11)
 plot(r,STATISTICS.THROUGHPUT(1,r+1));
 title('THROUGHPUT')
 figure(10)
